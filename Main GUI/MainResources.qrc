@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="Images">
+    <file>Media/Sierra_Tech.png</file>
+    <file>Media/SierraTechOG.png</file>
+  </qresource>
+</RCC>
