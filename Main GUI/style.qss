@@ -1,0 +1,139 @@
+/* ===========================================================
+   Engineering Tool - Consolidated Stylesheet
+   Extracted from inline styles in Main_ui.py and widget files
+   =========================================================== */
+
+/* --- Main Window Background --- */
+QMainWindow {
+    background-color: rgb(179, 191, 213);
+}
+
+/* --- Section Labels (Sidebar headings, metadata/notes titles) --- */
+#Calculatorslbl, #DataBaseLbl, #UsefulToolslbl, #noteslbl, #Metadatalbl {
+    color: rgb(15, 82, 155);
+    font-weight: bold;
+}
+
+/* --- Project Title --- */
+#ProjectTitle {
+    color: rgb(15, 82, 155);
+    font-weight: bold;
+}
+
+/* --- Active File Label --- */
+#ActiveFile {
+    color: rgb(0, 0, 0);
+}
+
+/* --- Standard Buttons --- */
+QPushButton {
+    background-color: rgb(229, 230, 232);
+    color: rgb(0, 0, 0);
+    border-radius: 3px;
+    padding: 4px 8px;
+}
+
+QPushButton:hover {
+    background-color: rgb(210, 215, 220);
+}
+
+QPushButton:disabled {
+    background-color: rgb(200, 200, 200);
+    color: rgb(140, 140, 140);
+}
+
+/* --- CAM action buttons (Graph, CAD, STEP) --- */
+#GraphBot, #CADBot, #STEPBot {
+    background-color: rgb(179, 191, 213);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}
+
+/* --- Separator Frames (horizontal & vertical lines) --- */
+#frame, #frame_2, #frame_3, #frame_4, #frame_5, #frame_6, #frame_7, #frame_8 {
+    background-color: rgb(15, 82, 155);
+}
+
+/* --- Stacked Widget (main content area) --- */
+#MainStack {
+    background-color: rgb(161, 162, 164);
+    border-radius: 5px;
+}
+
+/* --- Notes Text Edit --- */
+#Notes {
+    background-color: rgb(229, 230, 232);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}
+
+/* --- Metadata Panel (QLabel legacy or QTableWidget) --- */
+#Metadata, #MetadataTable {
+    background-color: rgb(161, 162, 164);
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+/* --- QTableWidget for Metadata --- */
+QTableWidget {
+    background-color: rgb(229, 230, 232);
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    gridline-color: rgb(179, 191, 213);
+    alternate-background-color: rgb(240, 242, 245);
+}
+
+QTableWidget QHeaderView::section {
+    background-color: rgb(15, 82, 155);
+    color: white;
+    font-weight: bold;
+    padding: 4px;
+    border: none;
+}
+
+/* --- QToolBox (sidebar) --- */
+QToolBox::tab {
+    background-color: rgb(15, 82, 155);
+    color: white;
+    font-weight: bold;
+    font-size: 12pt;
+    padding: 6px;
+    border-radius: 3px;
+}
+
+QToolBox::tab:selected {
+    background-color: rgb(25, 100, 180);
+}
+
+/* --- CAM Widget Background --- */
+#CAMDesigner {
+    background-color: rgb(161, 162, 164);
+}
+
+/* --- CAM Input Fields --- */
+#BaseRadius, #TravelRadius, #Thickness, #RiseDegrees, #HighDwell,
+#FallDegrees, #LowDwell, #Triangles, #RiseProfile, #FallProfile {
+    background-color: rgb(229, 230, 232);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}
+
+/* --- CAM Labels --- */
+#CAMDesigner QLabel {
+    color: rgb(0, 0, 0);
+}
+
+/* --- Line Edits (general) --- */
+QLineEdit {
+    background-color: rgb(229, 230, 232);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    padding: 2px 4px;
+}
+
+/* --- ComboBox (general) --- */
+QComboBox {
+    background-color: rgb(229, 230, 232);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+}

@@ -8,8 +8,8 @@ import Globals as g
 
 
 
-#print("Current working directory:", os.getcwd())
-CamPath=Path(r"E:\Py Engineering Tool\Engineering-Tool\Tool\CAMs\QT\CAM_Desinger_Widget.ui")
+### Portable path - resolved relative to this file's location ###
+CamPath = Path(__file__).resolve().parent / "QT" / "CAM_Desinger_Widget.ui"
 
 
 class CAMWidget(QtWidgets.QWidget):

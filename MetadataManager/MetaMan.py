@@ -73,9 +73,27 @@ def LoadData(self):
 
     with open(FilePath, "r", encoding="utf-8") as f:
         data = json.load(f)
-        
-    self.Metadata.setWordWrap(True)
-    self.Metadata.setText(json.dumps(data,indent=4))
+
+    # Support both QLabel (legacy) and QTableWidget (new) for Metadata display
+    if hasattr(self.Metadata, 'setRowCount'):
+        # QTableWidget - populate structured view
+        rows = []
+        for key, value in data.items():
+            if isinstance(value, dict):
+                for sub_key, sub_val in value.items():
+                    rows.append((f"{key}.{sub_key}", str(sub_val)))
+            else:
+                rows.append((str(key), str(value)))
+        from PyQt6.QtWidgets import QTableWidgetItem
+        self.Metadata.setRowCount(len(rows))
+        for i, (field, val) in enumerate(rows):
+            self.Metadata.setItem(i, 0, QTableWidgetItem(field))
+            self.Metadata.setItem(i, 1, QTableWidgetItem(val))
+    else:
+        # Legacy QLabel fallback
+        self.Metadata.setWordWrap(True)
+        self.Metadata.setText(json.dumps(data, indent=4))
+
     g.MetadataPath = FilePath
 
 
@@ -113,5 +131,13 @@ def RunData(mainui):
                 combo.setCurrentIndex(index)
     
 def ClearData(self):
-    self.Metadata.clear()
+    # Support both QLabel and QTableWidget
+    if hasattr(self.Metadata, 'setRowCount'):
+        self.Metadata.setRowCount(0)
+    else:
+        self.Metadata.clear()
+    g.MetadataPath = None
+    # Disable action buttons if MainWindow has the method
+    if hasattr(self, '_set_metadata_buttons_enabled'):
+        self._set_metadata_buttons_enabled(False)
     return
